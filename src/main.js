@@ -5,29 +5,13 @@ import store from './store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(ElementUI)
+// 引入全局样式表
+import './assets/css/global.css'
+// 引入登录input小图标
+import './assets/fonts/iconfont.css'
+// 引入左菜单栏小图标
+import './assets/fonts/font_2361802_5e9rjjkd9j8/iconfont.css';
 
-import './assets/commonstyle/common.css'
-
-// 表示在项目部署的时候还要不要给用户打印出警告信息
-// Vue.config.productionTip = false
-
-router.beforeEach((to, from, next) => {
-  if (to.name === 'Login') {
-    if (localStorage.token) {
-      next({
-        name: 'Home'
-      })
-    }
-  }
-  if (to.name !== 'Login') {
-    if (!localStorage.token) {
-      next({
-        name: 'Login'
-      })
-    }
-  }
-  next()
-})
 new Vue({
   router,
   store,

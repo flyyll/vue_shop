@@ -10,9 +10,11 @@ const service = axios.create({
   baseURL:process.env.VUE_APP_BASE_API,
   timeout:5000,
 });
-
 service.interceptors.request.use(config=>{
-  config.headers.authorization = localStorage.token
+  // 通过axios拦截器添加token
+  // console.log(config);
+  config.headers.Authorization = sessionStorage.getItem('token')
+  // console.log(sessionStorage);
   return config;
 },(error)=>{
   return Promise.reject(error)
@@ -22,15 +24,13 @@ service.interceptors.request.use(config=>{
 service.interceptors.response.use(response =>{
     return response
 },error=>{
-  // console.dir(error)
   const {response} = error;
-  if(response.status !== 200) {
-    Message.error(response.data.message)
+  console.log(response);
+  if(response.data.meta.status !== 200) {
+    Message.error(response.data.meta.msg)
   }
   return Promise.reject(error)
 });
-
-
 export default service;
 
 

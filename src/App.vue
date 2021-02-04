@@ -1,10 +1,6 @@
 <template>
-  <div class="app">
-    <keep-alive>
-      <router-view></router-view>
-    </keep-alive>
+  <div id="app">
+    <!-- 路由占位符 -->
+    <router-view></router-view>
   </div>
 </template>
-
-<script>
-</script>

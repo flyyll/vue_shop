@@ -1,53 +1,50 @@
 import request from '@/utils/request';
-export function login(data) {
-  return request({
-    method: 'post',
-    url: '/users/login',
-    data,
-  })
-}
-export function AddUser(data) {
-  return request({
-    method: 'post',
-    url: '/users',
-    data,
-  })
-}
-// 判断字段值是否存在   需要传递两个值过来
-export function exist(field, value) {
-  return request({
-    method: 'get',
-    url: '/users/exist',
-    params: {
-      field,
-      value,
-    },
-  })
-}
-export function addUsers(data) {
+// 获取用户
+export function getUsers(data) {
   return request({
     method: 'get',
     url: '/users',
-    params: data,
-
+    params: data
   })
-}
-export function EditUsers(id) {
-  return request({
-    method: 'get',
-    url: `/users/${id}`,
-  })
-}
-export function updateUsersId(id, data) {
+};
+// 修改用户的状态
+export function modifyUsersState(id, type) {
   return request({
     method: 'put',
-    url: `/users/${id}`,
+    url: `/users/${id}/state/${type}`,
+  })
+};
+
+// 添加用户
+export function addUsers(data) {
+  return request({
+    method: 'post',
+    url: "users",
     data,
   })
-}
-export function deleteUsersId(id) {
+};
+
+// 根据id编辑用户信息
+export function editUsers(id) {
+  return request({
+    method: 'get',
+    url: `users/${id}`,
+  })
+};
+
+// 根据id编辑用户提交
+export function submitUsers(id,data) {
+  return request({
+    method: 'put',
+    url: `users/${id}`,
+    data,
+  })
+};
+// 根据id删除用户
+export function deleteUsers(id) {
   return request({
     method: 'delete',
-    url: `/users/${id}`,
+    url: `users/${id}`,
+
   })
-}
+};
