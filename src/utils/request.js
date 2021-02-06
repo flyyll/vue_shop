@@ -13,6 +13,7 @@ const service = axios.create({
 service.interceptors.request.use(config=>{
   // 通过axios拦截器添加token
   // console.log(config);
+ 
   config.headers.Authorization = sessionStorage.getItem('token')
   // console.log(sessionStorage);
   return config;
@@ -23,11 +24,11 @@ service.interceptors.request.use(config=>{
 
 service.interceptors.response.use(response =>{
     return response
+  
 },error=>{
-  const {response} = error;
-  console.log(response);
-  if(response.data.meta.status !== 200) {
-    Message.error(response.data.meta.msg)
+ 
+  if(response.meta.status !== 200) {
+    Message.error(response.meta.msg)
   }
   return Promise.reject(error)
 });

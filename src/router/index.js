@@ -18,13 +18,21 @@ const routes = [{
     redirect: '/welcome',
     children: [{
         // 以 / 开头的嵌套路径会被当作根路径
-        path: '/welcome',
+        path: "/welcome",
         component: () => import('@/components/Welcoms.vue')
       },
       {
-        path: '/users',
+        path: "/users",
         component: () => import("@/views/users/index.vue")
-      }
+      },
+      {
+        path: '/rights',
+        component: () => import("@/views/power/Jurisdiction.vue")
+      },
+      {
+        path: '/roles',
+        component: () => import("@/views/power/Roles.vue")
+      },
     ]
   },
 ]

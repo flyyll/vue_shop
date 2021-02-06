@@ -33,7 +33,7 @@ export function editUsers(id) {
 };
 
 // 根据id编辑用户提交
-export function submitUsers(id,data) {
+export function submitUsers(id, data) {
   return request({
     method: 'put',
     url: `users/${id}`,
@@ -46,5 +46,21 @@ export function deleteUsers(id) {
     method: 'delete',
     url: `users/${id}`,
 
+  })
+};
+
+// 获取分配时的角色列表
+export function addRoles() {
+  return request({
+    method: 'get',
+    url: "roles"
+  })
+};
+// 分配用户角色
+export function distributionRoles(id, data) {
+  return request({
+    method: 'put',
+    url: `users/${id}/role`,
+    data
   })
 };

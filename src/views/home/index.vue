@@ -10,7 +10,7 @@
       </div></el-header
     >
     <!-- 页面主体区 -->
-    <el-container>
+    <el-container class="container2">
       <!-- 侧边栏 -->
       <el-aside :width="isCollapse ? '64px' : '200px'">
         <div class="tiggle_button" @click="toggleCollapse">|||</div>
@@ -54,12 +54,11 @@
         </el-menu>
       </el-aside>
       <!-- 右侧内容 -->
-      <el-container>
-        <el-main>
-          <!-- 路由占位符 -->
-          <router-view> </router-view>
-        </el-main>
-      </el-container>
+
+      <el-main>
+        <!-- 路由占位符 -->
+        <router-view> </router-view>
+      </el-main>
     </el-container>
   </el-container>
 </template>
@@ -146,6 +145,8 @@ export default {
   }
   .el-main {
     background-color: #eaedf1;
+    // 使滚动区域缩小至子路由部分
+    height: calc(100vh - 60px);
   }
 }
 </style>
