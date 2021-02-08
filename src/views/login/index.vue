@@ -68,7 +68,6 @@ export default {
       this.$refs.loginFromRef.validate(async (valid) => {
         if (!valid) return;
         const { data: result } = await login(this.loginfrom);
-        console.log(result);
         if (result.meta.status !== 200)
           return this.$message.error(result.meta.msg);
         this.$message.success(result.meta.msg);
