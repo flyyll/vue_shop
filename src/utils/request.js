@@ -14,7 +14,8 @@ service.interceptors.request.use(config=>{
   // 通过axios拦截器添加token
   // console.log(config);
  
-  config.headers.Authorization = sessionStorage.getItem('token')
+  // config.headers.Authorization = sessionStorage.getItem('token')
+  config.headers.authorization = localStorage.token
   // console.log(sessionStorage);
   return config;
 },(error)=>{

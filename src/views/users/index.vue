@@ -378,7 +378,8 @@ export default {
   methods: {
     // 关闭对话框后,清除对话框数据
     closeSetRoleDialog() {
-      (this.selectedRolesId = ""), (this.UserInfo = {});
+      this.selectedRolesId = "";
+      this.UserInfo = {};
     },
 
     // 点击按钮确认分配的角色

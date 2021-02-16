@@ -71,7 +71,9 @@ export default {
         if (result.meta.status !== 200)
           return this.$message.error(result.meta.msg);
         this.$message.success(result.meta.msg);
-        window.sessionStorage.setItem("token", result.data.token);
+        // window.sessionStorage.setItem("token", result.data.token);
+         localStorage.token = result.data.token
+        console.log(result);
         this.$router.push("/home");
       });
     },

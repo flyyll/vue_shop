@@ -12,6 +12,7 @@ export function modifyUsersState(id, type) {
   return request({
     method: 'put',
     url: `/users/${id}/state/${type}`,
+    
   })
 };
 

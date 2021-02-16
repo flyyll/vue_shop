@@ -392,7 +392,7 @@ export default {
       const { data: res } = await getGoodsList(this.cateInfo);
       if (res.meta.status !== 200) return this.$message.error(res.meta.msg);
       // 把数据列表赋值给  cateList
-      this.cateList = res.data.result;
+      this.cateList = res.data.result; 
       // 为总数据条数赋值
       this.total = res.data.total;
     },

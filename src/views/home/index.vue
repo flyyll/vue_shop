@@ -100,7 +100,9 @@ export default {
 
     // 退出操作
     logout() {
-      sessionStorage.removeItem("token");
+      // sessionStorage.removeItem("token");
+      localStorage.removeItem("token");
+
       this.$router.push("/login");
     },
     async menus() {

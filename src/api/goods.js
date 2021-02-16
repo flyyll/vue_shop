@@ -4,7 +4,7 @@ export function getGoodsList(data) {
   return request({
     method: 'get',
     url: '/categories',
-    params:data,
+    params: data,
   })
 };
 // 添加分类
@@ -20,7 +20,7 @@ export function getParentCateList(data) {
   return request({
     method: 'get',
     url: '/categories',
-    params:data,
+    params: data,
   })
 };
 
@@ -33,7 +33,7 @@ export function editCateById(id) {
 };
 
 //  根据 id 编辑提交分类
-export function SubmitCateById(id,data) {
+export function SubmitCateById(id, data) {
   return request({
     method: 'put',
     url: `categories/${id}`,
@@ -45,5 +45,72 @@ export function deleteCateById(id) {
   return request({
     method: 'delete',
     url: `categories/${id}`,
+  })
+};
+
+
+// Params  组件区数据
+
+//  商品分类总数据列表
+export function getGoodsCateList() {
+  return request({
+    method: 'get',
+    url: 'categories',
+  })
+};
+
+//  参数列表的请求
+export function getParameterList(id, data) {
+  return request({
+    method: 'get',
+    url: `categories/${id}/attributes`,
+    params: data
+  })
+};
+
+// 添加动态参数或者静态属性
+export function addParamsDataList(id, data) {
+  return request({
+    method: 'post',
+    url: `categories/${id}/attributes`,
+    data
+  })
+};
+// 添加动态参数或者静态属性
+export function editParamsDataList(id, attrId, data) {
+  return request({
+    method: 'get',
+    url: `categories/${id}/attributes/${attrId}`,
+    param: data,
+
+  })
+};
+// 添加动态参数或者静态属性
+export function submitParamsDataList(id, attrId, data) {
+  return request({
+    method: 'put',
+    url: `categories/${id}/attributes/${attrId}`,
+    data,
+
+
+  })
+};
+// 删除动态参数或者静态属性
+export function delParamsDataList(id, attrId) {
+  return request({
+    method: 'delete',
+    url: `categories/${id}/attributes/${attrId}`
+
+  })
+};
+
+
+// 编辑提交el-tag参数
+export function SubmitElTagData(id, attrId, data) {
+  return request({
+    method: 'put',
+    url: `categories/${id}/attributes/${attrId}`,
+     data
+
   })
 };
