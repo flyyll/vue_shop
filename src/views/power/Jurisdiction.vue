@@ -53,6 +53,7 @@ export default {
 
 <style lang="scss" scoped>
 .jurisdiction {
+   padding: 10px;
   .el-card {
     margin-top: 15px;
   }

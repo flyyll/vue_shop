@@ -560,6 +560,7 @@ export default {
 
 <style lang="scss" scoped>
 .params {
+   padding: 10px;
   .el-card {
     margin-top: 15px;
 

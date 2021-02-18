@@ -9,6 +9,7 @@
         <el-button type="info" @click="logout">退出</el-button>
       </div></el-header
     >
+
     <!-- 页面主体区 -->
     <el-container class="container2">
       <!-- 侧边栏 -->
@@ -57,6 +58,7 @@
 
       <el-main>
         <!-- 路由占位符 -->
+        <Tags class="tags" />
         <router-view> </router-view>
       </el-main>
     </el-container>
@@ -66,7 +68,11 @@
 
 <script>
 import { menus } from "@/api/home.js";
+import Tags from "../../components/common/Tags";
 export default {
+  components: {
+    Tags,
+  },
   data() {
     return {
       isCollapse: false,
@@ -146,9 +152,14 @@ export default {
     }
   }
   .el-main {
+    padding: 0px;
     background-color: #eaedf1;
     // 使滚动区域缩小至子路由部分
-    height: calc(100vh - 60px);
+    height: calc(100vh - 60px); 
+
+    .tags {
+      margin-bottom: 15px;
+    }
   }
 }
 </style>

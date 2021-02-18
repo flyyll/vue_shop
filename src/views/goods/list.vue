@@ -194,7 +194,7 @@ export default {
     async getListData() {
       const { data: res } = await getListData(this.queryInfo);
       if (res.meta.status !== 200) return this.$message.error(res.meta.msg);
-      console.log(res);
+      // console.log(res);
 
       // 商品列表数据
       this.goodList = res.data.goods;
@@ -207,6 +207,7 @@ export default {
 
 <style lang="scss" scoped>
 .list {
+   padding: 10px;
   .el-card {
     margin-top: 15px;
   }

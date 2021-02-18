@@ -423,6 +423,7 @@ export default {
 
 <style lang="scss" scoped>
 .add {
+   padding: 10px;
   .el-card {
     margin-top: 15px;
 

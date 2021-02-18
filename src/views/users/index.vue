@@ -537,6 +537,7 @@ export default {
 
 <style lang="scss" scoped>
 .users {
+   padding: 10px;
   .el-breadcrumb {
     margin-bottom: 15px;
     font-size: 10px;

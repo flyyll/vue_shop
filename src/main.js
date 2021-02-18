@@ -19,7 +19,7 @@ import treeTable from 'vue-table-with-tree-grid';
 //  定义为全局组件使用
 Vue.component('tree-table', treeTable)
 
-
+// 表格插件
 import 'xe-utils'
 import VXETable from 'vxe-table'
 import 'vxe-table/lib/style.css'
@@ -36,6 +36,8 @@ import 'quill/dist/quill.snow.css' // for snow theme
 import 'quill/dist/quill.bubble.css' // for bubble theme
 // 将导入富文本编辑器 注册为全局可用的组件
 Vue.use(VueQuillEditor)
+
+
 
 
 new Vue({

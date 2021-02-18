@@ -401,6 +401,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .cate {
+   padding: 10px;
   .el-card {
     margin-top: 15px;
   }
