@@ -539,7 +539,7 @@ export default {
     // 分类列表的id
     cateId() {
       if ((this.slectedcateKeys.length = 3)) {
-        // 把最后一项的id值返回出去,给外面的接受
+        // 把最后一项的id值返回出去,给外面的接收
         return this.slectedcateKeys[this.slectedcateKeys.length - 1];
       } else {
         return null;

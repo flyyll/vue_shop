@@ -110,7 +110,53 @@ export function SubmitElTagData(id, attrId, data) {
   return request({
     method: 'put',
     url: `categories/${id}/attributes/${attrId}`,
-     data
+    data
 
+  })
+};
+
+
+// 以下是 list 页面数据
+
+// 获取 list 页面数据
+export function getListData(data) {
+  return request({
+    method: 'get',
+    url: 'goods',
+    params: data
+  })
+};
+
+// 根据 ID 删除数据 
+export function delListData(id) {
+  return request({
+    method: 'delete',
+    url: `goods/${id}`,
+
+  })
+};
+
+// 商品分类数据列表 展示在级联选择器
+export function getCascaderData() {
+  return request({
+    method: 'get',
+    url: 'categories',
+  })
+};
+// 商品分类参数列表数据
+export function getParameterData(id, data) {
+  return request({
+    method: 'get',
+    url: `categories/${id}/attributes`,
+    params: data
+  })
+};
+
+// 商品最终添加操作
+export function addParameterData(data) {
+  return request({
+    method: 'post',
+    url: 'goods',
+    data
   })
 };

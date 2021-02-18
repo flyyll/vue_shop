@@ -41,6 +41,15 @@ const routes = [{
         path: '/params',
         component: () => import("@/views/goods/Params.vue")
       },
+      {
+        path: '/goods',
+        component: () => import("@/views/goods/list.vue")
+      },
+      {
+        path: '/goods/list',
+        component: () => import("@/views/goods/Add.vue")
+      },
+   
     ]
   },
 ]
